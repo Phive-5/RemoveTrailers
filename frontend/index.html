@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Trailers</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="progress-bubble.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Remove Trailers</h1>
+        <div class="input-group">
+            <input type="text" id="directoryPath" placeholder="Enter directory path">
+            <button onclick="browseDirectory()">Browse</button>
+            <button onclick="scanDirectory()">Scan</button>
+        </div>
+        <div id="results">
+            <h3>Trailer Files Found: <span id="fileCount">0</span></h3>
+            <h3>Total Size: <span id="totalSize">0</span> GB</h3>
+            <table id="fileTable">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>File Name</th>
+                        <th>Size (GB)</th>
+                    </tr>
+                </thead>
+                <tbody id="fileList"></tbody>
+            </table>
+            <div class="button-group">
+                <button onclick="selectAll()">Select All</button>
+                <button onclick="removeSelected()">Remove Selected</button>
+            </div>
+        </div>
+    </div>
+    <script src="progress-bubble.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

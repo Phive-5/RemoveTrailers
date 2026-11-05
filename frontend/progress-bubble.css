@@ -1,0 +1,53 @@
+/* Progress Bubble Styles */
+.progress-bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1), transparent 50%),
+                linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+    transition: visibility 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.progress-bubble.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.progress-bubble::before {
+    content: attr(data-progress);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.progress-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+.progress-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
